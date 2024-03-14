@@ -1,12 +1,12 @@
 import Photo from './Photo.jsx'
 
-function Gallery() {
-  var list = [{id:1, size:{widht:500, height:300}}, {id:2, size:{widht:200, height:300}}, {id:3, size:{widht:500, height:300}}]
+function Gallery(props) {
+  var size
     return (
       <div>
         <h1>Galerie de photos</h1>
-        {list.map(info => 
-          <Photo id={info.id} size={info.size}/>)
+        {props.liste.map(info => 
+          <Photo key={info.id} id={info.id} size={size = {width:info.width, height:info.height}} author={info.author}/>)
         }
       </div>
     )

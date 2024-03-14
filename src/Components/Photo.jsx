@@ -1,7 +1,9 @@
 function Photo(props) {
-  var src = "https://picsum.photos/"+props.size.widht+"/"+props.size.height
+  var src = "https://picsum.photos/id/"+props.id+"/"+props.size.width+"/"+props.size.height
   return (
-    <img id={props.id} className="photo" src={src} alt="" />
+    <p>{props.author} (#{props.id})<br/>
+      <img id={props.id} className="photo" src={src} alt="" />
+    </p>
   )
 }
 
