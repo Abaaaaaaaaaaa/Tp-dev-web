@@ -1,20 +1,5 @@
 import './App.css'
-
-function Photo() {
-    return (
-      <img src="https://picsum.photos/500/300" alt="" />
-    )
-}
-
-function Gallery() {
-  return (
-    <div>
-      <h1>Galerie de photos</h1>
-      <Photo/>
-      <Photo/>
-    </div>
-  )
-}
+import Gallery from '../Components/Gallery.jsx'
 
 function App() {
   return (
