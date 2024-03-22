@@ -1,6 +1,7 @@
 import './App.css'
 import Search from './Components/Search.jsx'
 import Gallery from './Components/Gallery.jsx'
+import Hide from './Components/Hide.jsx'
 import liste from './Components/Data.jsx'
 import { useState } from "react";
 
@@ -11,6 +12,10 @@ function App() {
 
   const [photoFilter, setPhotoFilter] = useState(liste);
 
+  var bool;
+
+  const [hide, setHide] = useState(false);
+
   const handleSearchTermUpdate = (searchTerm) => {
     setPhotoFilter(liste);
     filterliste = liste.filter(item => {
@@ -19,12 +24,17 @@ function App() {
     setPhotoFilter(filterliste);
   };
 
+  const handleHideUpdate = (bool) => {
+    setHide(bool)
+  };
+
   return (
     <div>
-      {/* Passer la fonction de mise à jour du terme de recherche à Search */}
       <Search onSearchTermUpdate={handleSearchTermUpdate} />
-      {/* Passer le terme de recherche à Gallery */}
-      <Gallery liste={photoFilter} searchTerm={searchTerm} />
+      
+      <Hide onHideUpdate={handleHideUpdate}/>
+
+      <Gallery liste={photoFilter} searchTerm={searchTerm} hide={hide}/>
     </div>
   )
 }
