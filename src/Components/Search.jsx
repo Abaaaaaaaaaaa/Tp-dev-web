@@ -16,7 +16,6 @@ function Search({ onSearchTermUpdate }) {
         <div>
             <label htmlFor="input">Recherche par auteur : </label>
             <input className="input" type="text" onChange={handleSearch} />
-            <p>Recherche de {searchTerm}</p>
         </div>
     )
 }
